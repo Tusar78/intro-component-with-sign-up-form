@@ -1,24 +1,45 @@
 import React, { Component } from "react";
 
 export class FormValidation extends Component {
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  }
+
+  handleValidate = (e) => {
+    this.setState({
+      [e.target.name] : e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    const { firstName, lastName, email, password } = this.state;
+    e.preventDefault();
+    console.log(firstName, lastName, email, password);
+  }
+
   render() {
     return (
       <div className="form">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="form__input-group">
             <input
               type="text"
-              name="first-name"
+              name="firstName"
               className="form__input"
               placeholder="First Name"
+              onChange={this.handleValidate}
             />
           </div>
           <div className="form__input-group">
             <input
               type="text"
-              name="last-name"
+              name="lastName"
               className="form__input"
               placeholder="Last Name"
+              onChange={this.handleValidate}
             />
           </div>
           <div className="form__input-group">
@@ -27,6 +48,7 @@ export class FormValidation extends Component {
               name="email"
               className="form__input"
               placeholder="Email Address"
+              onChange={this.handleValidate}
             />
           </div>
           <div className="form__input-group">
@@ -35,6 +57,7 @@ export class FormValidation extends Component {
               name="password"
               className="form__input"
               placeholder="Password"
+              onChange={this.handleValidate}
             />
           </div>
 
