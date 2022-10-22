@@ -1,3 +1,85 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .main-section {
+    @apply w-full h-fit bg-[#ff7a7a];
+  }
+
+  .container {
+    @apply max-w-[1440px] w-full px-6 mx-auto py-20;
+  }
+
+  .form-description {
+    @apply pt-4 pb-14;
+  }
+
+  .description__heading {
+    @apply text-white font-bold text-center text-3xl mb-8;
+  }
+
+  .description__para {
+    @apply text-white text-center text-base font-medium;
+  }
+
+  /* Form Container */
+  .form__alert {
+    @apply p-6 px-12 text-base text-white rounded-xl bg-[#6055a5] text-center tracking-wide mb-8;
+  }
+
+  .form {
+    @apply max-w-[540px] w-full rounded-xl bg-white p-6;
+  }
+  
+  .form__input-group {
+    @apply mb-4;
+  }
+
+  .form__input,
+  .form__btn {
+    @apply p-4 border border-[#b9b6d3] rounded-md w-full placeholder:font-semibold placeholder:text-[#3e3c49];
+  }
+
+  .form__btn {
+    @apply bg-[#38cc8c] text-white uppercase font-medium border-0 mb-4;
+  }
+
+  .form__terms {
+    @apply text-xs font-semibold text-[#b9b6d3] text-center block leading-6;
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+  }
+
+  input, 
+  button {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Added background image */
+  .main-section {
+    background-image: url(./images/bg-intro-desktop.png);
+  }
+
+  .form__alert,
+  .form {
+    box-shadow: 0 8px 0 rgba(0, 0, 0, .15);
+    /* color: #38cc8c; */
+  }
+
+  .form__btn {
+    box-shadow: 0 6px 0 #30ba7f;
+    padding-bottom: 12px;
+
+    /* red  */
+    /* color: #ff7a7a ; */
+
+    /* Grayish  */
+    /* color: #b9b6d3; */
+  }
+}
