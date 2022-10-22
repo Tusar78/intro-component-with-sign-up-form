@@ -1,10 +1,9 @@
 import React from 'react';
-import FormValidation from './FormValidation';
 
 const FormPage = () => {
   return (
-    <div>
-      <FormValidation />
+    <div >
+      
     </div>
   );
 };
