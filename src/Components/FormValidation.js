@@ -30,6 +30,7 @@ export class FormValidation extends Component {
 
   validate = (values) => {
     const errors = {};
+    const regex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!values.firstName) {
       errors.firstName = "FirstName is required!";
     }
@@ -38,6 +39,8 @@ export class FormValidation extends Component {
     }
     if (!values.email) {
       errors.email = "email is required!";
+    } else if (!regex.test(values.email)) {
+      errors.email = "email is not valid!";
     }
     if (!values.password) {
       errors.password = "password is required!";
