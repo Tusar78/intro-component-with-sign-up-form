@@ -1,59 +1,55 @@
 import React, { Component } from "react";
 
 export class FormValidation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { firstName: "", lastName: "", email: "", password: "", formErrors: {}, isSubmit : false };
-  }
-  
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    formErrors: {},
+    isSubmit: false,
+  };
+
   handleValidate = (e) => {
     const { value, name } = e.target;
-
     this.setState({
       [name]: value,
     });
   };
 
-  
   handleSubmit = (e) => {
     e.preventDefault();
     this.setState({
       formErrors: this.validate(this.state),
-      isSubmit: true
-    })
+      isSubmit: true,
+    });
 
     if (Object.keys(this.state.formErrors).length === 0 && this.isSubmit) {
-      console.log(this.state);
     }
   };
-  
-  
-    
-  
 
   validate = (values) => {
     const errors = {};
     if (!values.firstName) {
-      errors.firstName = 'FirstName is required!'
+      errors.firstName = "FirstName is required!";
     }
     if (!values.lastName) {
-      errors.lastName = 'lastName is required!'
+      errors.lastName = "lastName is required!";
     }
     if (!values.email) {
-      errors.email = 'email is required!'
+      errors.email = "email is required!";
     }
     if (!values.password) {
-      errors.password = 'password is required!'
+      errors.password = "password is required!";
     }
-
     return errors;
-  }
+  };
 
   render() {
-    const { firstName, lastName, email, password, errors } = this.state;
+    const { formErrors } = this.state;
     return (
       <div className="form">
-        <pre>{JSON.stringify(this.state, undefined, 2)}</pre>
+        {/* <pre>{JSON.stringify(this.state, undefined, 2)}</pre> */}
         <form onSubmit={this.handleSubmit}>
           <div className="form__input-group">
             <input
@@ -63,6 +59,7 @@ export class FormValidation extends Component {
               placeholder="First Name"
               onChange={this.handleValidate}
             />
+            <p className="form-error">{formErrors.firstName}</p>
           </div>
           <div className="form__input-group">
             <input
@@ -72,6 +69,7 @@ export class FormValidation extends Component {
               placeholder="Last Name"
               onChange={this.handleValidate}
             />
+            <p>{formErrors.lastName}</p>
           </div>
           <div className="form__input-group">
             <input
@@ -81,6 +79,7 @@ export class FormValidation extends Component {
               placeholder="Email Address"
               onChange={this.handleValidate}
             />
+            <p>{formErrors.email}</p>
           </div>
           <div className="form__input-group">
             <input
@@ -90,6 +89,7 @@ export class FormValidation extends Component {
               placeholder="Password"
               onChange={this.handleValidate}
             />
+            <p>{formErrors.password}</p>
           </div>
 
           <button className="form__btn">Claim your free trial</button>
