@@ -1,5 +1,5 @@
 import React from 'react';
-import FormValidation from './FormValidation';
+import ValidationForm from './ValidationForm';
 
 const FormPage = () => {
   return (
@@ -12,7 +12,7 @@ const FormPage = () => {
 
         <div className='form-container'>
           <p className='form__alert'><span className='font-bold'>Try it free 7 days</span> then $20/mo. thereafter</p>
-          <FormValidation />
+          <ValidationForm />
         </div>
       </section>
     </main>
