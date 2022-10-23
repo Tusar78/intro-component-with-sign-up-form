@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 
 export class ValidationForm extends Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  };
+
+  getData = (e) => {
+    console.log(e.target);
+  };
+
   render() {
+    const {firstName, lastName, email, password} = this.state;
     return (
       <div className="form">
         <form>
@@ -11,6 +23,8 @@ export class ValidationForm extends Component {
               name="firstName"
               className="form__input"
               placeholder="First Name"
+              value={firstName}
+              onChange={this.getData}
             />
           </div>
           <div className="form__input-group">
@@ -19,6 +33,8 @@ export class ValidationForm extends Component {
               name="lastName"
               className="form__input"
               placeholder="Last Name"
+              value={lastName}
+              onChange={this.getData}
             />
           </div>
           <div className="form__input-group">
@@ -26,6 +42,8 @@ export class ValidationForm extends Component {
               type="email"
               name="email"
               className="form__input"
+              onChange={this.getData}
+              value={email}
               placeholder="Email Address"
             />
           </div>
@@ -34,6 +52,8 @@ export class ValidationForm extends Component {
               type="password"
               name="password"
               className="form__input"
+              onChange={this.getData}
+              value={password}
               placeholder="Password"
             />
           </div>
