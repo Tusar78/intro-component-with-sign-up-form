@@ -9,7 +9,10 @@ export class ValidationForm extends Component {
   };
 
   getData = (e) => {
-    console.log(e.target);
+    const {name, value} = e.target;
+    this.setState({
+      [name] : [value]
+    })
   };
 
   render() {
