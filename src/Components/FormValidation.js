@@ -1,28 +1,59 @@
 import React, { Component } from "react";
 
 export class FormValidation extends Component {
-  state = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
+  constructor(props) {
+    super(props);
+    this.state = { firstName: "", lastName: "", email: "", password: "", formErrors: {}, isSubmit : false };
   }
-
+  
   handleValidate = (e) => {
-    this.setState({
-      [e.target.name] : e.target.value
-    })
-  }
+    const { value, name } = e.target;
 
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  
   handleSubmit = (e) => {
-    const { firstName, lastName, email, password } = this.state;
     e.preventDefault();
-    console.log(firstName, lastName, email, password);
+    this.setState({
+      formErrors: this.validate(this.state),
+      isSubmit: true
+    })
+
+    if (Object.keys(this.state.formErrors).length === 0 && this.isSubmit) {
+      console.log(this.state);
+    }
+  };
+  
+  
+    
+  
+
+  validate = (values) => {
+    const errors = {};
+    if (!values.firstName) {
+      errors.firstName = 'FirstName is required!'
+    }
+    if (!values.lastName) {
+      errors.lastName = 'lastName is required!'
+    }
+    if (!values.email) {
+      errors.email = 'email is required!'
+    }
+    if (!values.password) {
+      errors.password = 'password is required!'
+    }
+
+    return errors;
   }
 
   render() {
+    const { firstName, lastName, email, password, errors } = this.state;
     return (
       <div className="form">
+        <pre>{JSON.stringify(this.state, undefined, 2)}</pre>
         <form onSubmit={this.handleSubmit}>
           <div className="form__input-group">
             <input
@@ -63,7 +94,8 @@ export class FormValidation extends Component {
 
           <button className="form__btn">Claim your free trial</button>
           <span className="form__terms">
-            By clicking the button, you are agreeing to our <span className="text-[#ff7a7a] font-bold">Terms and Services</span>
+            By clicking the button, you are agreeing to our{" "}
+            <span className="text-[#ff7a7a] font-bold">Terms and Services</span>
           </span>
         </form>
       </div>
