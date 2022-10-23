@@ -19,7 +19,7 @@ export class ValidationForm extends Component {
     const {firstName, lastName, email, password} = this.state;
     return (
       <div className="form">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="form__input-group">
             <input
               type="text"
