@@ -15,6 +15,10 @@ export class ValidationForm extends Component {
     })
   };
 
+  handleSubmit = e => {
+    
+  }
+
   render() {
     const {firstName, lastName, email, password} = this.state;
     return (
