@@ -16,7 +16,7 @@ export class ValidationForm extends Component {
   };
 
   handleSubmit = e => {
-    
+    e.preventDefault();
   }
 
   render() {
