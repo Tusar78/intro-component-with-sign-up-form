@@ -62,8 +62,12 @@ export class ValidationForm extends Component {
               placeholder="First Name"
               value={firstName}
               onChange={this.getData}
-            />            
-            <img src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg" alt="error img" />
+            />
+            <img
+              className="error-icon"
+              src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg"
+              alt="error img"
+            />
             <span className="form__error">{errors.firstName}</span>
           </div>
           <div className="form__input-group">
@@ -74,6 +78,11 @@ export class ValidationForm extends Component {
               placeholder="Last Name"
               value={lastName}
               onChange={this.getData}
+            />
+            <img
+              className="error-icon"
+              src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg"
+              alt="error img"
             />
             <span className="form__error">{errors.lastName}</span>
           </div>
@@ -86,6 +95,11 @@ export class ValidationForm extends Component {
               value={email}
               placeholder="Email Address"
             />
+            <img
+              className="error-icon"
+              src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg"
+              alt="error img"
+            />
             <span className="form__error">{errors.email}</span>
           </div>
           <div className="form__input-group">
@@ -96,6 +110,11 @@ export class ValidationForm extends Component {
               onChange={this.getData}
               value={password}
               placeholder="Password"
+            />
+            <img
+              className="error-icon"
+              src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg"
+              alt="error img"
             />
             <span className="form__error">{errors.password}</span>
           </div>

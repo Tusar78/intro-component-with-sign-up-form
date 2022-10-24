@@ -33,7 +33,7 @@
   }
   
   .form__input-group {
-    @apply mb-4;
+    @apply mb-4 relative;
   }
 
   .form__input,
@@ -50,7 +50,11 @@
   }
 
   .form__error {
-    @apply text-[#ff7a7a] text-sm block text-right font-medium;
+    @apply text-[#ff7a7a] text-sm block text-right font-medium mt-1;
+  }
+
+  .error-icon {
+    @apply absolute top-4 right-4
   }
 }
 
