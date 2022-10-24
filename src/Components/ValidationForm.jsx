@@ -58,13 +58,13 @@ export class ValidationForm extends Component {
             <input
               type="text"
               name="firstName"
-              className="form__input"
+              className={errors.firstName ? "form__input border-[#ff7a7a]" : "form__input"}
               placeholder="First Name"
               value={firstName}
               onChange={this.getData}
             />
             <img
-              className="error-icon"
+              className={errors.firstName ? "error-icon" : "error-icon hidden"}
               src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg"
               alt="error img"
             />
@@ -74,13 +74,13 @@ export class ValidationForm extends Component {
             <input
               type="text"
               name="lastName"
-              className="form__input"
+              className={errors.lastName ? "form__input border-[#ff7a7a]" : "form__input"}
               placeholder="Last Name"
               value={lastName}
               onChange={this.getData}
             />
             <img
-              className="error-icon"
+              className={errors.lastName ? "error-icon" : "error-icon hidden"}
               src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg"
               alt="error img"
             />
@@ -90,13 +90,13 @@ export class ValidationForm extends Component {
             <input
               type="email"
               name="email"
-              className="form__input"
+              className={errors.email ? "form__input border-[#ff7a7a]" : "form__input"}
               onChange={this.getData}
               value={email}
               placeholder="Email Address"
             />
             <img
-              className="error-icon"
+              className={errors.email ? "error-icon" : "error-icon hidden"}
               src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg"
               alt="error img"
             />
@@ -106,13 +106,13 @@ export class ValidationForm extends Component {
             <input
               type="password"
               name="password"
-              className="form__input"
+              className={errors.password ? "form__input border-[#ff7a7a]" : "form__input"}
               onChange={this.getData}
               value={password}
               placeholder="Password"
             />
             <img
-              className="error-icon"
+              className={errors.password ? "error-icon" : "error-icon hidden"}
               src="https://raw.githubusercontent.com/Tusar78/intro-component-with-sign-up-form/5f0e183347b76534cb50c4b27d2121518ed6cfbf/src/images/icon-error.svg"
               alt="error img"
             />

@@ -38,7 +38,7 @@
 
   .form__input,
   .form__btn {
-    @apply p-4 border border-[#b9b6d3] rounded-md w-full placeholder:font-semibold placeholder:text-[#3e3c49] outline-none transition-all duration-200 focus:border-blue-200 focus:ring-4 focus:ring-blue-200;
+    @apply p-4 border border-[#b9b6d3] rounded-md w-full placeholder:font-semibold placeholder:text-[#3e3c49] outline-none transition-all duration-200;
   }
 
   .form__btn {
@@ -54,7 +54,7 @@
   }
 
   .error-icon {
-    @apply absolute top-4 right-4
+    @apply absolute top-4 right-5
   }
 }
 
