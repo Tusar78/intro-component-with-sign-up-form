@@ -13,7 +13,7 @@ export class ValidationForm extends Component {
     const { name, value } = e.target;
     this.setState({
       [name]: value,
-      // errors: this.validation(this.state),
+      errors: this.validation(this.state),
     });
   };
 
