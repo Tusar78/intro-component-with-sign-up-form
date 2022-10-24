@@ -13,7 +13,7 @@ export class ValidationForm extends Component {
     const { name, value } = e.target;
     this.setState({
       [name]: value,
-      errors: this.validation(this.state),
+      // errors: this.validation(this.state),
     });
   };
 
@@ -62,7 +62,7 @@ export class ValidationForm extends Component {
               placeholder="First Name"
               value={firstName}
               onChange={this.getData}
-            />
+            />            
             <span className="form__error">{errors.firstName}</span>
           </div>
           <div className="form__input-group">

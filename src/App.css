@@ -38,7 +38,7 @@
 
   .form__input,
   .form__btn {
-    @apply p-4 border border-[#b9b6d3] rounded-md w-full placeholder:font-semibold placeholder:text-[#3e3c49] outline-none;
+    @apply p-4 border border-[#b9b6d3] rounded-md w-full placeholder:font-semibold placeholder:text-[#3e3c49] outline-none transition-all duration-200 focus:border-blue-200 focus:ring-4 focus:ring-blue-200;
   }
 
   .form__btn {
@@ -47,6 +47,10 @@
 
   .form__terms {
     @apply text-xs font-semibold text-[#b9b6d3] text-center block leading-6;
+  }
+
+  .form__error {
+    @apply text-[#ff7a7a] text-sm block text-right font-medium;
   }
 }
 
