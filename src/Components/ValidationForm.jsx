@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import swal from 'sweetalert';
 
 export class ValidationForm extends Component {
   state = {
@@ -7,6 +8,7 @@ export class ValidationForm extends Component {
     email: "",
     password: "",
     errors: {},
+    isSubmit: false,
   };
 
   getData = (e) => {
@@ -46,7 +48,12 @@ export class ValidationForm extends Component {
     e.preventDefault();
     this.setState({
       errors: this.validation(this.state),
+      isSubmit: true,
     });
+
+    if (Object.keys(this.state.errors).length === 0 && this.state.isSubmit) {
+      
+    }
   };
 
   render() {
