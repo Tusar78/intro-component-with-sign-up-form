@@ -52,7 +52,12 @@ export class ValidationForm extends Component {
     });
 
     if (Object.keys(this.state.errors).length === 0 && this.state.isSubmit) {
-      
+      swal({
+        title: "Good job!",
+        text: "Account created successfully!",
+        icon: "success",
+        button: "Close!",
+      });
     }
   };
 
