@@ -29,7 +29,7 @@
   }
 
   .form {
-    @apply max-w-[540px] w-full rounded-xl bg-white p-6 md:mx-auto;
+    @apply max-w-[540px] w-full rounded-xl bg-white p-6 mx-auto;
   }
   
   .form__input-group {
@@ -42,7 +42,7 @@
   }
 
   .form__btn {
-    @apply bg-[#38cc8c] text-white uppercase font-medium border-0 mb-4;
+    @apply bg-[#38cc8c] text-white uppercase font-medium border-0 mb-4 active:translate-y-1;
   }
 
   .form__terms {
@@ -82,5 +82,10 @@
   .form__btn {
     box-shadow: 0 6px 0 #30ba7f;
     padding-bottom: 12px;
+  }
+
+  .form__btn:active {
+    box-shadow: none;
+    /* padding-bottom: 16px; */
   }
 }
