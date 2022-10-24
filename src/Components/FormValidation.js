@@ -30,7 +30,7 @@ export class FormValidation extends Component {
 
   validate = (values) => {
     const errors = {};
-    const regex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (!values.firstName) {
       errors.firstName = "FirstName is required!";
     }
@@ -52,7 +52,7 @@ export class FormValidation extends Component {
     const { formErrors } = this.state;
     return (
       <div className="form">
-        {/* <pre>{JSON.stringify(this.state, undefined, 2)}</pre> */}
+        <pre>{JSON.stringify(this.state, undefined, 2)}</pre>
         <form onSubmit={this.handleSubmit}>
           <div className="form__input-group">
             <input

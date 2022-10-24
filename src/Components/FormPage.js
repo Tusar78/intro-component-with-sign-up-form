@@ -13,6 +13,7 @@ const FormPage = () => {
         <div className='form-container'>
           <p className='form__alert'><span className='font-bold'>Try it free 7 days</span> then $20/mo. thereafter</p>
           <ValidationForm />
+          {/* <FormValidation /> */}
         </div>
       </section>
     </main>
